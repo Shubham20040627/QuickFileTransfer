@@ -77,7 +77,8 @@ button:hover {
   transform: translateY(-2px);
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-bottom: 20px;
   color: #111827;
 }
@@ -93,7 +94,7 @@ h1, h2 {
 .chat-header {
   padding: 15px 20px;
   background: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,7 +129,7 @@ h1, h2 {
   background: white;
   color: var(--text-color);
   border-bottom-left-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .message-meta {
@@ -177,6 +178,35 @@ h1, h2 {
 .download-btn {
   padding: 5px 10px;
   font-size: 12px;
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+    max-width: 100%;
+  }
+
+  .screen {
+    padding: 1rem;
+  }
+
+  .chat-footer {
+    padding: 10px;
+  }
+
+  .message {
+    max-width: 85%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    width: 90%;
+  }
 }
