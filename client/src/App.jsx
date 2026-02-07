@@ -5,9 +5,8 @@ import JoinRoom from './components/JoinRoom'
 import Chat from './components/Chat'
 import './index.css'
 
-// Use environment variable for production, or fallback to localhost/LAN IP
-const SERVER_URL = import.meta.env.VITE_SERVER_URL || "http://localhost:3001";
-const socket = io.connect(SERVER_URL);
+// Connect to the same origin (works for both local and deployed if served together)
+const socket = io();
 
 function App() {
     const [username, setUsername] = useState("");

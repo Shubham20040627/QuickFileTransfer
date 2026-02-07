@@ -39,6 +39,15 @@ io.on("connection", (socket) => {
 });
 
 const PORT = process.env.PORT || 3001;
+
+// Deployment: Serve static files
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
 server.listen(PORT, () => {
     console.log(`SERVER RUNNING on port ${PORT}`);
 });

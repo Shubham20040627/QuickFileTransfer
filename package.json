@@ -1,7 +1,8 @@
 {
-  "dependencies": {
-    "react-router-dom": "^7.13.0",
-    "socket.io-client": "^4.8.3",
-    "uuid": "^13.0.0"
+  "name": "quick-file-share-root",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "start": "cd server && node index.js"
   }
 }
