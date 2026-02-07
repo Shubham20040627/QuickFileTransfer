@@ -9,6 +9,7 @@ app.use(cors());
 const server = http.createServer(app);
 
 const io = new Server(server, {
+    maxHttpBufferSize: 1e7, // 10 MB
     cors: {
         origin: "*", // Allow any origin for deployment simplicity
         methods: ["GET", "POST"],
