@@ -12,7 +12,7 @@ function Welcome({ setUsername, setScreen }) {
 
     return (
         <div className="screen">
-            <h1>QuickFileShare</h1>
+            <h1>Sync Drop</h1>
             <p>Share messages and files securely in real-time.</p>
             <input
                 type="text"
