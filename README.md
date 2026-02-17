@@ -9,20 +9,33 @@ It is built with a focus on **Privacy and Speed**. The server is completely stat
 
 ## 📸 How It Works (Workflow)
 
-### 1. Welcome Screen
-Enter your username to get started. The UI is clean and minimal.
-![Welcome Screen - Desktop](client/src/assets/welcome_screen.png)
-![Welcome Screen - Mobile](client/src/assets/file_transfer_1.jpeg)
+### 🖥️ Desktop Experience
 
-### 2. Create or Join a Room
-You can create a new room (which generates a unique 8-character ID) or join an existing one.
-![Create Room - Desktop](client/src/assets/create_join_room.png)
-![Create Room - Mobile](client/src/assets/file_transfer_2.jpeg)
+#### 1. Welcome Screen
+Enter your username to get started with a clean interface.
+![Welcome Screen](client/src/assets/welcome_screen.png)
 
-### 3. Real-Time Chat & File Sharing
-Once inside, you can chat instantly and share files.
-![Chat Room - Desktop](client/src/assets/chat_room.png)
-![Chat Room - Mobile](client/src/assets/file_transfer_3.jpeg)
+#### 2. Create or Join Room
+Generate a unique Room ID or enter an existing one to join a secure session.
+![Create Room](client/src/assets/create_join_room.png)
+
+#### 3. Chat & File Sharing
+Chat in real-time and share files instantly with connected users.
+![Chat Room](client/src/assets/chat_room.png)
+
+### 📱 Mobile Experience
+
+#### Seamless Mobile Interface
+The application is fully responsive. Here is the flow on mobile devices:
+
+**1. File Sharing & Chat Interface**
+![Mobile Chat](client/src/assets/file_transfer_3.jpeg)
+
+**2. Joining a Room**
+![Mobile Join](client/src/assets/file_transfer_2.jpeg)
+
+**3. Welcome Screen**
+![Mobile Welcome](client/src/assets/file_transfer_1.jpeg)
 
 ---
 
