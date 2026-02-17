@@ -11,21 +11,18 @@ It is built with a focus on **Privacy and Speed**. The server is completely stat
 
 ### 1. Welcome Screen
 Enter your username to get started. The UI is clean and minimal.
-![Welcome Screen](client/src/assets/welcome_screen.png)
+![Welcome Screen - Desktop](client/src/assets/welcome_screen.png)
+![Welcome Screen - Mobile](client/src/assets/file_transfer_1.jpeg)
 
 ### 2. Create or Join a Room
 You can create a new room (which generates a unique 8-character ID) or join an existing one.
-![Create Room](client/src/assets/create_join_room.png)
+![Create Room - Desktop](client/src/assets/create_join_room.png)
+![Create Room - Mobile](client/src/assets/file_transfer_2.jpeg)
 
-### 3. Real-Time Chat
-Once inside, you can chat instantly. Messages appear with zero latency.
-![Chat Room](client/src/assets/chat_room.png)
-
-### 4. Instant File Sharing
-Select a file, and it is instantly transferred to everyone in the room. They can download it with one click.
-![File Sharing 1](client/src/assets/file_transfer_1.jpeg)
-![File Sharing 2](client/src/assets/file_transfer_2.jpeg)
-![File Sharing 3](client/src/assets/file_transfer_3.jpeg)
+### 3. Real-Time Chat & File Sharing
+Once inside, you can chat instantly and share files.
+![Chat Room - Desktop](client/src/assets/chat_room.png)
+![Chat Room - Mobile](client/src/assets/file_transfer_3.jpeg)
 
 ---
 
