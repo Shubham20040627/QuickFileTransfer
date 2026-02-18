@@ -19,7 +19,10 @@ Enter your username to get started with a clean interface.
 Generate a unique Room ID or enter an existing one to join a secure session.
 ![Create Room](client/src/assets/create_join_room.png)
 
-#### 3. Chat & File Sharing
+#### 3. 📍 Find People Nearby (New!)
+Click **"Find People Nearby"** to automatically discover other users on your same WiFi network. Connect instantly without typing a Room ID.
+
+#### 4. Chat & File Sharing
 Chat in real-time and share files instantly with connected users.
 ![Chat Room](client/src/assets/chat_room.png)
 

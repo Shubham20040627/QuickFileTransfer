@@ -19,9 +19,51 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
 
+    // Store user info
+    const clientIp = socket.handshake.address;
+    socket.ip = clientIp; // Store on socket object for easy access
+    console.log(`User Connected: ${socket.id} (IP: ${clientIp})`);
+
+    socket.on("register_user", (username) => {
+        socket.username = username;
+    });
+
     socket.on("join_room", (data) => {
         socket.join(data);
         console.log(`User with ID: ${socket.id} joined room: ${data}`);
+    });
+
+    // WiFi Discovery Logic
+    socket.on("find_nearby", () => {
+        const nearbyUsers = [];
+        const connectedSockets = io.sockets.sockets;
+
+        for (const [id, s] of connectedSockets) {
+            // Check if same IP but different socket ID and has a username
+            if (s.ip === socket.ip && id !== socket.id && s.username) {
+                nearbyUsers.push({
+                    id: id,
+                    username: s.username
+                });
+            }
+        }
+
+        socket.emit("nearby_found", nearbyUsers);
+    });
+
+    socket.on("connect_peer", (data) => {
+        // data: { targetId, room }
+
+        // 1. Force TARGET to join room
+        const targetSocket = io.sockets.sockets.get(data.targetId);
+        if (targetSocket) {
+            targetSocket.join(data.room);
+            targetSocket.emit("force_join", data.room);
+        }
+
+        // 2. Join SENDER to room
+        socket.join(data.room);
+        socket.emit("room_joined", data.room);
     });
 
     socket.on("send_message", (data) => {
