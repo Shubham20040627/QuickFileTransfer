@@ -7,6 +7,7 @@ import { X } from 'lucide-react';
 
 const ChatContainer = ({ roomId, users, messages, currentUsername, onSendMessage, onFileShared, onLeave }) => {
     const [showTransferZone, setShowTransferZone] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
 
     const handleFileSharedProxy = (fileData) => {
         onFileShared(fileData);
@@ -14,20 +15,32 @@ const ChatContainer = ({ roomId, users, messages, currentUsername, onSendMessage
     };
 
     return (
-        <div className="animate-fade-in" style={{ 
+        <div className="animate-fade-in chat-layout" style={{ 
             display: 'flex', 
             height: '85vh', 
             width: '95vw', 
             maxWidth: '1200px', 
             gap: '20px'
         }}>
-            <Sidebar roomId={roomId} users={users} />
+            <div className={`sidebar-container ${!showSidebar ? 'hide-on-mobile' : ''}`}>
+               <Sidebar roomId={roomId} users={users} />
+            </div>
             
-            <div className="glass-card" style={{ flex: 1, display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
+            <div className="glass-card chat-main" style={{ flex: 1, display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ padding: '16px 24px', borderBottom: '1px solid var(--glass-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div>
-                        <h2 style={{ fontSize: '1.2rem', fontWeight: '700' }}>Real-time Transfer</h2>
-                        <span style={{ fontSize: '0.75rem', color: '#10B981' }}>● Connected</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                        <button 
+                            className="btn-secondary" 
+                            style={{ padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                            onClick={() => setShowSidebar(!showSidebar)}
+                        >
+                            <span className="hide-on-mobile">{showSidebar ? 'Hide Users' : 'Show Users'}</span>
+                            <span style={{ display: 'none' }} className="show-on-mobile-flex">👥</span>
+                        </button>
+                        <div>
+                            <h2 style={{ fontSize: '1.2rem', fontWeight: '700' }}>Real-time Transfer</h2>
+                            <span style={{ fontSize: '0.75rem', color: '#10B981' }}>● Connected</span>
+                        </div>
                     </div>
                     <button onClick={onLeave} className="btn-secondary" style={{ padding: '8px 16px', fontSize: '0.85rem' }}>
                         Leave Room

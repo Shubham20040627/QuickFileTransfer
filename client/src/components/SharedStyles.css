@@ -98,3 +98,44 @@ body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .chat-layout {
+    flex-direction: column !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    border-radius: 0 !important;
+    gap: 0 !important;
+  }
+
+  .sidebar-container {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 200px;
+    border-bottom: 1px solid var(--glass-border);
+    border-radius: 0 !important;
+  }
+
+  .chat-main {
+    border-radius: 0 !important;
+  }
+
+  .glass-card {
+    border-radius: 16px;
+  }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .show-on-mobile-flex {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-on-mobile-flex {
+    display: none !important;
+  }
+}
