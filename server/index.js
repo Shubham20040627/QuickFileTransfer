@@ -6,6 +6,11 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+// Health check endpoint for Render
+app.get('/health', (req, res) => {
+    res.status(200).send('Server is healthy');
+});
+
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
